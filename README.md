@@ -4,23 +4,23 @@ Play with sequences of numbers to create nice graphs on a canvas.
 
 This summer my kids found a math game, a sequence of numbers to be drawn on a squared paper, to get a nice schematic drawing.
 
-All you need is an odd sequence of integers, three (at last), five, seven (or more) numbers, and a simple drawing rule pattern.
+All you need is a sequence of integers and a simple drawing rule pattern.
 
 The movements must follow these paths sequence: **right, up, left, down**
 
 The drawing is finished when you'll get the starting point.
 
-Let's understand it better with this simple sequence: **3, 3, 9**
+Let's understand it better with this simple sequence: `3, 3, 9`
 
-The first line must be from the beginning point to **right**, the line must be **_3_** squares long.
+The first line must be from the beginning point to **right**, the line must be `3` squares long.
 
 ![Step one](readme/step1.png?raw=true "Step one")
 
-The second draw will start from the end of the previous one, the line must be **_3_** squares long, **up** direction.
+The second draw will start from the end of the previous one, the line must be `3` squares long, **up** direction.
 
 ![Step two](readme/step2.png?raw=true "Step two")   
  
-Then the third draw will start from the end of the previous one, the line must be **_9_** squares long, **left** direction.
+Then the third draw will start from the end of the previous one, the line must be `9` squares long, **left** direction.
 
 ![Step three](readme/step3.png?raw=true "Step three")   
 
@@ -28,7 +28,7 @@ We haven't reached the starting point, so we need to restart the sequence number
 
 ![Step four](readme/step4.png?raw=true "Step four")   
 
-We did in sequence all the 4 movements, but we didn't reach the end point, so the let's go on moving **right** for **_3_** squares 
+We did in sequence all the 4 movements, but we didn't reach the end point, so the let's go on moving **right** for `3` squares 
 
 ![Step five](readme/step5.png?raw=true "Step five")   
 
@@ -36,6 +36,27 @@ And so on, until we finish the number sequence of movements right at the staring
 
 ![Final drawing](readme/final.png?raw=true "Final drawing")
 
+___
+
+###Let's the fun begin
+
+Try strange combinations, and have fun:
+
+`1,2,3,4,5,6,7,8,9,1,1,2,3,4,5,6,7,8,9`
+
+![Final drawing](readme/example1.png?raw=true "Final drawing")
+
+___ 
+
+`2,2,2,8,8,8,1,1,1,3,3,3,4,4,4,5,5,5,6,6,6,7,7,7,9,9,9`
+
+![Final drawing](readme/example2.png?raw=true "Final drawing")
+
+___
+  
+`1,1,1,2,2,2,3,3,3,4,4,4,5,5,5,6,6,6,7,7,7,8,8,8,9,9,9`
+
+![Final drawing](readme/example3.png?raw=true "Final drawing")
 
 ## ⚒ Structure
 
@@ -77,7 +98,18 @@ Better, responsive layout.
 
 Better typography.
 
+CompositionAPI, since we're on a vue3 project. 
+
 But at the end, this is just a concept. 
+
+___
+
+### == Changelog ==
+
+**1.0**
+
+ - Initial release.
+
 
 --- 
 
