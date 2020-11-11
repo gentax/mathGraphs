@@ -1,0 +1,16 @@
+{
+	"semi": false,
+	"singleQuote": true,
+	"printWidth": 120,
+	"useTabs": true,
+	"tabWidth": 4,
+	"jsxBracketSameLine": true,
+	"overrides": [
+		{
+			"files": "*.md",
+			"options": {
+				"tabWidth": 4
+			}
+		}
+	]
+}
