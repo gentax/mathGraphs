@@ -26,11 +26,17 @@
 					<input id="showGrid" ref="showGrid" v-model="showGrid" type="checkbox" />
 				</label>
 			</p>
+			<p>
+				<label for="color">
+					multicolor lines
+					<input id="color" ref="color" v-model="color" type="checkbox" />
+				</label>
+			</p>
 		</div>
 
 		<div class="item-3">
 			<div id="canvas-wrapper">
-				<Canvas :sequence="toArray(sequence)" :speed="speed" :show-grid="showGrid"></Canvas>
+				<Canvas :sequence="toArray(sequence)" :speed="speed" :show-grid="showGrid" :color="color"></Canvas>
 			</div>
 		</div>
 
@@ -51,6 +57,7 @@ export default {
 			sequence: '3, 3, 9',
 			speed: 800,
 			showGrid: true,
+			color: true,
 		}
 	},
 	methods: {

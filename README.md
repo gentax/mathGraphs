@@ -106,7 +106,12 @@ ___
 
 ### == Changelog ==
 
-**1.0**
+**0.1.1**
+
+ - Added colours to the lines.
+ 
+
+ **0.1**
 
  - Initial release.
 

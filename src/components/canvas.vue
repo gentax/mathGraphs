@@ -24,6 +24,10 @@ export default {
 			type: Boolean,
 			default: () => true,
 		},
+		color: {
+			type: Boolean,
+			default: () => true,
+		},
 	},
 	data() {
 		return {
@@ -42,6 +46,7 @@ export default {
 			movement: ['right', 'up', 'left', 'down'],
 			movementIndex: -1,
 			drawInterval: null,
+			strokeColors: ['#222', 'purple', 'green', '#F60', 'red', '#00F'],
 		}
 	},
 	mounted() {
@@ -85,7 +90,12 @@ export default {
 				this.createGrid(this.provider.context)
 			}
 
-			this.provider.context.strokeStyle = '#333'
+			// choose a random color
+			if (this.color) {
+				this.changeColor(this.provider.context)
+			} else {
+				this.provider.context.strokeStyle = '#222'
+			}
 
 			// set the starting point and ... let's start!
 			this.startPoint(this.provider.context)
@@ -111,6 +121,9 @@ export default {
 			ctx.lineTo(this.currentPositionH, this.currentPositionV)
 			ctx.stroke()
 		},
+		changeColor(ctx) {
+			ctx.strokeStyle = this.strokeColors[Math.floor(Math.random() * this.strokeColors.length)]
+		},
 		nextDirection() {
 			this.movementIndex++
 			if (this.movementIndex === this.movement.length) {
@@ -130,6 +143,9 @@ export default {
 		},
 		checkIndex() {
 			if (this.sequenceIndex === this.sequence.length - 1) {
+				if (this.color) {
+					this.changeColor(this.provider.context)
+				}
 				this.sequenceIndex = 0
 			} else {
 				this.sequenceIndex++
