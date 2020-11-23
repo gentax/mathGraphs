@@ -1,6 +1,7 @@
 node_modules/
 .nuxt
 package-lock.json
+/scripts/gh-pages-deploy.js
 build/
 dist/
 .cache/

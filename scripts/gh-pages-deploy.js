@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
-const fs = require('fs')
-const execa = require('execa')
+const fs = require('fs');
+const execa = require('execa');
 
 (async () => {
 	try {
