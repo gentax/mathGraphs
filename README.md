@@ -88,28 +88,30 @@ yarn lint
 #### CLI
 
 [vue cli](https://cli.vuejs.org/) is use to scaffolding and serve the project
+
 #### Tests
 
 No tests at the moment, shame on me!
 
-## Missing 
+## Missing
 
-Better, responsive layout. 
-
-Better typography.
-
-CompositionAPI, since we're on a vue3 project. 
-
-But at the end, this is just a concept. 
+CompositionAPI, since we're on a vue3 project. Will be there in the next iteration. 
 
 ___
 
 ### == Changelog ==
 
+**0.2**
+ 
+ - Added [githup page](https://gentax.github.io/mathGraphs/) and way to publish it: /scripts/gh-pages-deploy.js
+ - Added lovely [tailwindcss](https://tailwindcss.com/).
+ - Fixed way to redraw canvas.
+ - Canvas now resize automatically.
+ - Grid size can be changed.
+ 
 **0.1.1**
 
  - Added colours to the lines.
- 
 
  **0.1**
 

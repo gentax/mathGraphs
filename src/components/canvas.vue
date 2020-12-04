@@ -5,6 +5,7 @@
 <script>
 export default {
 	name: 'Canvas',
+	inject: ['finished'],
 	// Allows any child component to `inject: ['provider']` and have access to it.
 	provide() {
 		return {
@@ -20,6 +21,10 @@ export default {
 			type: Number,
 			default: () => 0,
 		},
+		space: {
+			type: Number,
+			default: () => 0,
+		},
 		showGrid: {
 			type: Boolean,
 			default: () => true,
@@ -29,6 +34,7 @@ export default {
 			default: () => true,
 		},
 	},
+
 	data() {
 		return {
 			// By creating the provider in the data property, it becomes reactive,
@@ -37,7 +43,6 @@ export default {
 				// This is the CanvasRenderingContext that children will draw to.
 				context: null,
 			},
-			space: 20,
 			sequenceIndex: 0,
 			startPointH: 260,
 			startPointV: 260,
@@ -46,44 +51,75 @@ export default {
 			movement: ['right', 'up', 'left', 'down'],
 			movementIndex: -1,
 			drawInterval: null,
-			strokeColors: ['#222', 'purple', 'green', '#F60', 'red', '#00F'],
+			strokeColors: [
+				'#222',
+				'purple',
+				'green',
+				'#F60',
+				'red',
+				'#00F',
+				'#0ff',
+				'#a52a2a',
+				'#00008B',
+				'#1E90FF',
+				'#DAA520',
+				'#FF00FF',
+				'#808000',
+				'#00FF7F',
+				'#9ACD32',
+			],
 		}
 	},
 	mounted() {
 		// We can't access the rendering context until the canvas is mounted to the DOM.
 		// Once we have it, provide it to all child components.
 		this.provider.context = this.$refs['my-canvas'].getContext('2d')
-
-		this.startUp()
+		window.addEventListener('resize', this.resizeCanvasAndStarUp)
+		this.resizeCanvasAndStarUp()
 	},
-	updated: function () {
-		clearInterval(this.drawInterval)
-		this.startUp()
+	updated() {
+		if (!this.finished.status) {
+			clearInterval(this.drawInterval)
+			this.resizeCanvasAndStarUp()
+		}
+	},
+	unmounted() {
+		window.removeEventListener('resize', this.resizeCanvasAndStarUp)
 	},
 	methods: {
-		startUp: function () {
+		resizeCanvasAndStarUp() {
+			// clear any interval
+			clearInterval(this.drawInterval)
+
 			// Resize the canvas to fit its parent's width.
-			// Normally you'd use a more flexible resize system.
-			this.$refs['my-canvas'].width = this.$refs['my-canvas'].parentElement.clientWidth || 520
-			this.$refs['my-canvas'].height = this.$refs['my-canvas'].parentElement.clientHeight || 520
+			const newWidth = Math.floor(this.$refs['my-canvas'].parentElement.clientWidth) || 520
+			let newHeight = Math.floor(this.$refs['my-canvas'].parentElement.clientHeight) || 520
 
-			// clear rect, useful if we update the code
-			this.provider.context.clearRect(
-				0,
-				0,
-				this.$refs['my-canvas'].parentElement.clientWidth,
-				this.$refs['my-canvas'].parentElement.clientHeight
-			)
+			// set height limit
+			if (newHeight > 465) {
+				newHeight = 465
+			}
 
-			// start/restart the sequence from the beginning
-			this.sequenceIndex = 0
-			this.movementIndex = -1
+			// update canvas and restart
+			this.$refs['my-canvas'].width = newWidth
+			this.$refs['my-canvas'].height = newHeight
 
-			// set the starting point and the current position
-			this.startPointH = this.$refs['my-canvas'].parentElement.clientWidth / 2
-			this.startPointV = this.$refs['my-canvas'].parentElement.clientHeight / 2
+			// set the starting point and the current position, in the middle of the canvas
+			// 1. get the center of the actual canvas -> Math.floor(newWidth / 2)
+			// 2. convert number to the nearest multiple of the given square width -> Math.round( XXX / this.space) * this.space ( https://stackoverflow.com/a/7948187 )
+			this.startPointH = Math.round(Math.floor(newWidth / 2) / this.space) * this.space
+			this.startPointV = Math.round(Math.floor(newHeight / 2) / this.space) * this.space
+
+			// set the initial position where start the draw
 			this.currentPositionH = this.startPointH
 			this.currentPositionV = this.startPointV
+
+			// clear rect, useful if we update the code
+			this.provider.context.clearRect(0, 0, newWidth, newHeight)
+
+			// start/restart the sequence from the beginning, initial move index is set
+			this.sequenceIndex = 0
+			this.movementIndex = -1
 
 			// if checked, draw the grid
 			if (this.showGrid) {
@@ -94,10 +130,10 @@ export default {
 			if (this.color) {
 				this.changeColor(this.provider.context)
 			} else {
-				this.provider.context.strokeStyle = '#222'
+				this.provider.context.strokeStyle = this.strokeColors[0]
 			}
 
-			// set the starting point and ... let's start!
+			// set the starting point and ... let's start to draw!
 			this.startPoint(this.provider.context)
 			this.startInterval()
 		},
@@ -137,8 +173,8 @@ export default {
 				this.currentPositionV === this.startPointV &&
 				this.sequenceIndex === this.sequence.length - 1
 			) {
-				console.log('**** GIOCO FINITO ****')
 				clearInterval(this.drawInterval)
+				this.finished.status = true
 			}
 		},
 		checkIndex() {
@@ -192,18 +228,9 @@ export default {
 			ctx.moveTo(0, 0)
 			ctx.lineTo(this.$refs['my-canvas'].clientWidth, this.$refs['my-canvas'].clientHeight)
 
-			ctx.strokeStyle = '#ddd'
+			ctx.strokeStyle = 'rgba(156, 163, 175, 0.3)'
 			ctx.stroke()
 		},
 	},
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-canvas {
-	background: #fff;
-	border: 1px solid #ccc;
-	margin: 0 auto;
-}
-</style>
