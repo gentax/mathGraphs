@@ -3,24 +3,24 @@
   "version": "0.1.1",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "dev": "vite",
+    "build-vite": "vite build",
     "build": "vue-cli-service build",
+    "serve": "vue-cli-service serve",
     "lint": "vue-cli-service lint",
     "deploy": "node scripts/gh-pages-deploy.js",
     "lint-fix": "vue-cli-service lint --fix"
   },
   "dependencies": {
-    "autoprefixer": "^9",
     "core-js": "^3.6.5",
-    "postcss": "^7",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
-    "vue": "^3.0.0"
+    "vue": "^3.0.5"
   },
   "devDependencies": {
+    "@vitejs/plugin-vue": "^1.0.4",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
-    "@vue/compiler-sfc": "^3.0.0",
+    "@vue/compiler-sfc": "^3.0.5",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-config-prettier": "^6.11.0",
@@ -29,7 +29,10 @@
     "eslint-plugin-vue": "^7.0.0-0",
     "execa": "latest",
     "husky": "^4.2.5",
-    "prettier": "^2.0.5"
+    "postcss": "^7",
+    "prettier": "^2.0.5",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
+    "vite": "^1.0.0-rc.13"
   },
   "eslintConfig": {
     "root": true,

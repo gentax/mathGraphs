@@ -8,11 +8,11 @@
 				Beauty Graphs with math
 			</p>
 			<div class="mt-10">
-				<dl class="space-y-10 md:grid md:grid-cols-6 md:space-y-0 md:space-x-10">
+				<div class="space-y-10 md:grid md:grid-cols-6 md:space-y-0 md:space-x-10">
 					<div class="min-w-min">
 						<div class="shadow-lg rounded-xl">
 							<div class="px-2 font-semibold">
-								<dd
+								<div
 									class="text-lg leading-6 font-medium text-gray-900 flex items-center justify-center h-12 text-white text-base text-indigo-600 font-semibold tracking-wide uppercase"
 								>
 									<svg
@@ -31,8 +31,8 @@
 										/>
 									</svg>
 									Settings
-								</dd>
-								<dd class="text-base text-left divide-solid leading-10">
+								</div>
+								<div class="text-base text-left divide-solid leading-10">
 									<div class="divide-y divide-light-blue-600">
 										<div class="py-1 text-gray-500">
 											<label for="sequence">
@@ -97,7 +97,7 @@
 											</label>
 										</div>
 									</div>
-								</dd>
+								</div>
 							</div>
 							<div
 								class="text-center space-x-2 p-2 bg-gradient-to-br rounded-b-xl leading-6 font-semibold text-white"
@@ -124,22 +124,22 @@
 							class="shadow-lg rounded-xl"
 						></Canvas>
 					</div>
-				</dl>
+				</div>
 			</div>
 			<div class="text-left text-xs mt-10 bg-gray-50 rounded-3xl p-2 sm:p-5 xl:p-6">
 				<h2 class="font-semibold text-gray-900 text-xl">Rules</h2>
-				<h4 class="text-lg mt-3">Sequence of numbers</h4>
+				<h3 class="text-lg mt-3">Sequence of numbers</h3>
 				<p class="">
 					Cycle thought the sequence of numbers. Each number indicates how many units you need to move.
 					Following the direction rules. the There is no limit to the amount of numbers you can use.<br />And
 					remember that... odd sequence are better and negative numbers are valid.
 				</p>
-				<h4 class="text-lg mt-3">Direction</h4>
+				<h3 class="text-lg mt-3">Direction</h3>
 				<p>
 					Direction is a loop: first drawing direction is right, second one is up, third one to left, 4th to
 					right. Than, start again.
 				</p>
-				<h4 class="text-lg mt-3">Goal</h4>
+				<h3 class="text-lg mt-3">Goal</h3>
 				<p>If the last number of the sequence finish at the starting point, you reached the goal.</p>
 			</div>
 			<div class="mt-5 text-gray-300 font-semibold">©2020 gentax</div>
