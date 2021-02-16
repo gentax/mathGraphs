@@ -13,7 +13,7 @@
 						<div class="shadow-lg rounded-xl">
 							<div class="px-2 font-semibold">
 								<div
-									class="text-lg leading-6 font-medium text-gray-900 flex items-center justify-center h-12 text-white text-base text-indigo-600 font-semibold tracking-wide uppercase"
+									class="text-lg leading-6 font-medium flex items-center justify-center h-12 text-base text-indigo-600 font-semibold tracking-wide uppercase"
 								>
 									<svg
 										class="h-6 w-6 mr-2.5"
@@ -32,8 +32,8 @@
 									</svg>
 									Settings
 								</div>
-								<div class="text-base text-left divide-solid leading-10">
-									<div class="divide-y divide-light-blue-600">
+								<div class="text-left divide-solid leading-10">
+									<div class="divide-y divide-light-grey-600">
 										<div class="py-1 text-gray-500">
 											<label for="sequence">
 												sequence

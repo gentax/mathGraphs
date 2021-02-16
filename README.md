@@ -18,21 +18,21 @@ The first line must be from the beginning point to **right**, the line must be `
 
 The second draw will start from the end of the previous one, the line must be `3` squares long, **up** direction.
 
-![Step two](readme/step2.png?raw=true "Step two")   
- 
+![Step two](readme/step2.png?raw=true "Step two")
+
 Then the third draw will start from the end of the previous one, the line must be `9` squares long, **left** direction.
 
-![Step three](readme/step3.png?raw=true "Step three")   
+![Step three](readme/step3.png?raw=true "Step three")
 
 We haven't reached the starting point, so we need to restart the sequence number, going **down** for 3 squares.
 
-![Step four](readme/step4.png?raw=true "Step four")   
+![Step four](readme/step4.png?raw=true "Step four")
 
-We did in sequence all the 4 movements, but we didn't reach the end point, so the let's go on moving **right** for `3` squares 
+We did in sequence all the 4 movements, but we didn't reach the end point, so the let's go on moving **right** for `3` squares
 
-![Step five](readme/step5.png?raw=true "Step five")   
+![Step five](readme/step5.png?raw=true "Step five")
 
-And so on, until we finish the number sequence of movements right at the staring point. 
+And so on, until we finish the number sequence of movements right at the staring point.
 
 ![Final drawing](readme/final.png?raw=true "Final drawing")
 
@@ -46,14 +46,14 @@ Try strange combinations, and have fun:
 
 ![Final drawing](readme/example1.png?raw=true "Final drawing")
 
-___ 
+___
 
 `2,2,2,8,8,8,1,1,1,3,3,3,4,4,4,5,5,5,6,6,6,7,7,7,9,9,9`
 
 ![Final drawing](readme/example2.png?raw=true "Final drawing")
 
 ___
-  
+
 `1,1,1,2,2,2,3,3,3,4,4,4,5,5,5,6,6,6,7,7,7,8,8,8,9,9,9`
 
 ![Final drawing](readme/example3.png?raw=true "Final drawing")
@@ -95,20 +95,27 @@ No tests at the moment, shame on me!
 
 ## Missing
 
-CompositionAPI, since we're on a vue3 project. Will be there in the next iteration. 
+CompositionAPI, since we're on a vue3 project. Will be there in the next iteration.
 
 ___
 
 ### == Changelog ==
 
+**0.3**
+
+- Added the amazing
+[vite](https://github.com/vitejs/vite) && [windicss](https://github.com/windicss/windicss)
+for a super quick Developer Experience (DX)
+
+
 **0.2**
- 
+
  - Added [githup page](https://gentax.github.io/mathGraphs/) and way to publish it: /scripts/gh-pages-deploy.js
  - Added lovely [tailwindcss](https://tailwindcss.com/).
  - Fixed way to redraw canvas.
  - Canvas now resize automatically.
  - Grid size can be changed.
- 
+
 **0.1.1**
 
  - Added colours to the lines.
@@ -118,7 +125,7 @@ ___
  - Initial release.
 
 
---- 
+---
 
 ##### hope you enjoy it!
 
