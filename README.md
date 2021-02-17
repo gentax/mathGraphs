@@ -69,14 +69,19 @@ This is a vue3 + canvas experiment.
 yarn install
 ```
 
-### Compiles and hot-reloads for development
+### Compiles and hot-reloads for development, now with superfast vite.js
 ```
-yarn serve
+yarn dev
 ```
 
 ### Lints and fixes files
 ```
 yarn lint
+```
+
+### Build for production (in this case, githup page)
+```
+yarn build-vite
 ```
 
 ## 👾 Developer
