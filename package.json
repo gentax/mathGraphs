@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "vite",
-    "build-vite": "vite build",
+    "build-vite": "vite build --base=/mathGraphs",
     "build": "vue-cli-service build",
     "serve": "vue-cli-service serve",
     "lint": "vue-cli-service lint",
