@@ -1,5 +1,5 @@
 <template>
-	<canvas id="my-canvas" ref="my-canvas"></canvas>
+	<canvas id="my-canvas" ref="my-canvas" class="shadow-lg rounded-xl"></canvas>
 </template>
 
 <script>
@@ -175,6 +175,8 @@ export default {
 			) {
 				clearInterval(this.drawInterval)
 				this.finished.status = true
+				console.log('Feedback for nerds like me... finished status is now true')
+
 			}
 		},
 		checkIndex() {
