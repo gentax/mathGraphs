@@ -1,5 +1,5 @@
 <template>
-	<canvas id="my-canvas" ref="my-canvas" class="shadow-lg rounded-xl"></canvas>
+	<canvas id="my-canvas" ref="my-canvas" shadow="lg" border="rounded-xl"></canvas>
 </template>
 
 <script>

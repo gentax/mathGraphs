@@ -1,22 +1,27 @@
 <template>
-	<div class="container mx-auto py-12 bg-white text-center">
-		<div class="px-4 sm:px-6 lg:px-8">
-			<h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">
+	<div m="x-auto" p="y-12" bg="white" text="center" class="container">
+		<div p="x-4 sm:x-6 lg:x-8">
+			<h2 text="base indigo-600 uppercase" font="semibold tracking-wide">
 				<a href="https://github.com/gentax/mathGraphs">go to github repo</a>
 			</h2>
-			<p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-				Beauty Graphs with math
-			</p>
-			<div class="mt-10">
-				<div class="space-y-10 md:grid md:grid-cols-6 md:space-y-0 md:space-x-10">
-					<div class="min-w-min">
-						<div class="shadow-lg rounded-xl">
-							<div class="px-2 font-semibold">
+			<p m="t-2" text="3xl gray-900 sm:4xl" font="leading-8 extrabold tracking-tight">Beauty Graphs with math</p>
+			<div m="t-10">
+				<div space="y-10 md:y-0 md:x-10" grid="md:cols-6" class="md:grid">
+					<div m="in-w-in">
+						<div shadow="lg" border="rounded-xl">
+							<div p="x-2" font="semibold">
 								<div
-									class="text-lg leading-6 font-medium flex items-center justify-center h-12 text-base text-indigo-600 font-semibold tracking-wide uppercase"
+									text="lg base indigo-600 uppercase"
+									font="leading-6 medium semibold tracking-wide"
+									align="items-center"
+									justify="center"
+									h="12"
+									class="flex"
 								>
 									<svg
-										class="h-6 w-6 mr-2.5"
+										h="6"
+										w="6"
+										class="mr-2.5"
 										xmlns="http://www.w3.org/2000/svg"
 										fill="none"
 										viewBox="0 0 24 24"
@@ -32,21 +37,34 @@
 									</svg>
 									Settings
 								</div>
-								<div class="text-left divide-solid leading-10">
-									<div class="divide-y divide-light-grey-600">
-										<div class="py-1 text-gray-500">
+								<div text="left" divide="solid" font="leading-10">
+									<div divide="y light-grey-600">
+										<div p="y-1" text="gray-500">
 											<label for="sequence">
 												sequence
 												<input
 													id="sequence"
 													ref="sequence"
 													v-model="sequence"
-													class="w-full flex-none bg-gray-50 text-gray-400 hover:text-gray-900 font-mono leading-6 py-1 px-1 border border-gray-100 rounded-sm flex items-center justify-center space-x-2 sm:space-x-4 focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-300 focus:outline-none transition-colors duration-200"
+													w="full"
+													flex="none"
+													bg="gray-50"
+													text="gray-400 hover:gray-900"
+													font="mono leading-6"
+													p="y-1 x-1"
+													border="default gray-100 rounded-sm"
+													align="items-center"
+													justify="center"
+													space="x-2 sm:x-4"
+													ring="focus:2 focus:offset-2 focus:offset-white focus:gray-300"
+													outline="focus:none"
+													transition="colors duration-200"
+													class="flex"
 												/>
-												<small class="text-gray-300">(try other sequence!)</small>
+												<small text="gray-300">(try other sequence!)</small>
 											</label>
 										</div>
-										<div class="py-1 text-gray-500">
+										<div p="y-1" text="gray-500">
 											<label for="speed">
 												drawing speed
 												<input
@@ -54,12 +72,25 @@
 													ref="speed"
 													v-model.number="speed"
 													type="number"
-													class="w-full flex-none bg-gray-50 text-gray-400 hover:text-gray-900 font-mono leading-6 py-1 px-1 border border-gray-100 rounded-sm flex items-center justify-center space-x-2 sm:space-x-4 focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-300 focus:outline-none transition-colors duration-200"
+													w="full"
+													flex="none"
+													bg="gray-50"
+													text="gray-400 hover:gray-900"
+													font="mono leading-6"
+													p="y-1 x-1"
+													border="default gray-100 rounded-sm"
+													align="items-center"
+													justify="center"
+													space="x-2 sm:x-4"
+													ring="focus:2 focus:offset-2 focus:offset-white focus:gray-300"
+													outline="focus:none"
+													transition="colors duration-200"
+													class="flex"
 													@change="redraw"
 												/>
 											</label>
 										</div>
-										<div class="py-1 text-gray-500">
+										<div p="y-1" text="gray-500">
 											<label for="speed">
 												Square width
 												<input
@@ -67,12 +98,25 @@
 													ref="space"
 													v-model.number="space"
 													type="number"
-													class="w-full flex-none bg-gray-50 text-gray-400 hover:text-gray-900 font-mono leading-6 py-1 px-1 border border-gray-100 rounded-sm flex items-center justify-center space-x-2 sm:space-x-4 focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-300 focus:outline-none transition-colors duration-200"
+													w="full"
+													flex="none"
+													bg="gray-50"
+													text="gray-400 hover:gray-900"
+													font="mono leading-6"
+													p="y-1 x-1"
+													border="default gray-100 rounded-sm"
+													align="items-center"
+													justify="center"
+													space="x-2 sm:x-4"
+													ring="focus:2 focus:offset-2 focus:offset-white focus:gray-300"
+													outline="focus:none"
+													transition="colors duration-200"
+													class="flex"
 													@change="redraw"
 												/>
 											</label>
 										</div>
-										<div class="py-1 text-gray-500">
+										<div p="y-1" text="gray-500">
 											<label for="showGrid">
 												show grid
 												<input
@@ -84,7 +128,7 @@
 												/>
 											</label>
 										</div>
-										<div class="py-1 text-gray-500">
+										<div p="y-1" text="gray-500">
 											<label for="color">
 												multicolor lines
 												<input
@@ -100,13 +144,18 @@
 								</div>
 							</div>
 							<div
-								class="text-center space-x-2 p-2 bg-gradient-to-br rounded-b-xl leading-6 font-semibold text-white"
+								text="center white"
+								space="x-2"
+								p="2"
+								bg="gradient-to-br"
+								border="rounded-b-xl"
+								font="leading-6 semibold"
 								:class="{
 									'from-blue-200 to-indigo-500': !finished.status,
 									'from-blue-400 to-indigo-700': finished.status,
 								}"
 							>
-								<p class="text-light-blue-100">
+								<p text="light-blue-100">
 									<span v-if="finished.status">Completed</span>
 									<span v-else>Drawing</span>
 								</p>
@@ -114,35 +163,36 @@
 						</div>
 					</div>
 
-					<div class="col-span-1 md:col-span-5">
+					<div grid="col-span-1 md:col-span-5">
 						<Canvas
 							:sequence="toArray(sequence)"
 							:speed="speed"
 							:show-grid="showGrid"
 							:color="color"
 							:space="space"
-							class="shadow-lg rounded-xl"
+							shadow="lg"
+							border="rounded-xl"
 						></Canvas>
 					</div>
 				</div>
 			</div>
-			<div class="text-left text-xs mt-10 bg-gray-50 rounded-3xl p-2 sm:p-5 xl:p-6">
-				<h2 class="font-semibold text-gray-900 text-xl">Rules</h2>
-				<h3 class="text-lg mt-3">Sequence of numbers</h3>
-				<p class="">
+			<div text="left xs" m="t-10" bg="gray-50" border="rounded-3xl" p="2 sm:5 xl:6">
+				<h2 font="semibold" text="gray-900 xl">Rules</h2>
+				<h3 text="lg" m="t-3">Sequence of numbers</h3>
+				<p>
 					Cycle thought the sequence of numbers. Each number indicates how many units you need to move.
 					Following the direction rules. the There is no limit to the amount of numbers you can use.<br />And
 					remember that... odd sequence are better and negative numbers are valid.
 				</p>
-				<h3 class="text-lg mt-3">Direction</h3>
+				<h3 text="lg" m="t-3">Direction</h3>
 				<p>
 					Direction is a loop: first drawing direction is right, second one is up, third one to left, 4th to
 					right. Than, start again.
 				</p>
-				<h3 class="text-lg mt-3">Goal</h3>
+				<h3 text="lg" m="t-3">Goal</h3>
 				<p>If the last number of the sequence finish at the starting point, you reached the goal.</p>
 			</div>
-			<div class="mt-5 text-gray-300 font-semibold">©2020 gentax</div>
+			<div m="t-5" text="gray-300" font="semibold">©2020 gentax</div>
 		</div>
 	</div>
 </template>
