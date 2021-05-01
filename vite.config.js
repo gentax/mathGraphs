@@ -1,13 +1,14 @@
+import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
 import WindiCSS from 'vite-plugin-windicss'
 
-export default {
+// https://vitejs.dev/config/
+export default defineConfig({
+	resolve: { alias: { '@': '/src' } },
 	plugins: [
 		Vue({
 			include: [/\.vue$/, /\.md$/],
 		}),
-		WindiCSS({
-			safelist: 'shadow shadow-xl',
-		}),
+		WindiCSS(),
 	],
-}
+})
